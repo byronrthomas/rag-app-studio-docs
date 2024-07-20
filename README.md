@@ -24,11 +24,11 @@ In order to use RAG App Studio, you need access to HuggingFace, you need to gene
 2. Generate a token for your account that has write access - see [these more detailed instructions](./hugging-face-token.md) if you're unsure
 3. Request access to the Mistral 7B model - [request access to Mistral 7b model](./mistral-gated-access-request.md) - **YOU MUST have access to this model** as it is the default and RAG App Studio won't start without it
 4. Request access to any other of the LLM models you want to use, following the instructions to [request access to Mistral 7b model](./mistral-gated-access-request.md), but visiting other HuggingFace pages. You can find out about each model on its HuggingFace page.
-  a. [google/gemma-2b-it](https://huggingface.co/google/gemma-2b-it)
-  b. [google/gemma-7b-it](https://huggingface.co/google/gemma-2b-it)
-  c. [google/gemma-2-9b-it](https://huggingface.co/google/gemma-2-9b-it)
-  d. [meta-llama/Llama-2-7b-chat-hf](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf)
-  e. [meta-llama/Meta-Llama-3-8B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct)
+   1. [google/gemma-2b-it](https://huggingface.co/google/gemma-2b-it)
+   2. [google/gemma-7b-it](https://huggingface.co/google/gemma-2b-it)
+   3. [google/gemma-2-9b-it](https://huggingface.co/google/gemma-2-9b-it)
+   4. [meta-llama/Llama-2-7b-chat-hf](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf)
+   5. [meta-llama/Meta-Llama-3-8B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct)
 
 ## RAG App Studio Builder
 
