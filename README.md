@@ -39,3 +39,14 @@ The builder application is where you build your RAG application. The builder wor
 In order to launch an instance of the builder, you need to create a template on Theta EdgeCloud to run a custom AI workload:
 
 SCREENSHOT in here
+
+1. Navigate to the custom template page and click to add a template (see screenshot)
+2. Enter the following details for the template:
+   a. Name - you can enter anything that helps you, I suggest "RAGBuild"
+   b. Container Image URL - must be set to `byronthomas712/rag-app-studio-builder:1.0`
+   c. Container Port - must be set to `8000`
+   d. Environment variables - must be set to `{"HUGGING_FACE_HUB_TOKEN":"hf_SECRET"}` if your HuggingFace hub token is `hf_SECRET` - please be careful to enter this correctly or the app won't start
+
+Here is a screenshot showing how it would look if your token is `hf_SECRET` - **you must replace this value with your actual token!**
+
+SCREENSHOT again
