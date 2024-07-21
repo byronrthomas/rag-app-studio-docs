@@ -15,9 +15,9 @@ HuggingFace is a repository for AI models, think of it like Github for models wi
 In order to use RAG App Studio, you need access to HuggingFace, you need to generate an appropriate access token and you need to get access to the models you want to use in the app. Follow the steps below to go through each of these.
 
 1. Sign up for an account with HuggingFace hub
-2. Generate a token for your account that has write access - see [these more detailed instructions](./hugging-face-token.md) if you're unsure - you should save this to a password manager to keep it safe
-3. Request access to the Mistral 7B model - [request access to Mistral 7b model](./mistral-gated-access-request.md) - **YOU MUST have access to this model** as it is the default and RAG App Studio won't start without it
-4. Request access to any other of the LLM models you want to use, following the instructions to [request access to Mistral 7b model](./mistral-gated-access-request.md), but visiting other HuggingFace pages. You can find out about each model on its HuggingFace page.
+2. Generate a token for your account that has write access (it's role must be shown as "write" in the HuggingFace UI) - see [these more detailed instructions](https://huggingface.co/docs/hub/en/security-tokens#how-to-manage-user-access-tokens) if you're unsure - you should save this to a password manager to keep it safe
+3. Request access to the Mistral 7B model - [request access to Mistral 7b model](./detailed/mistral-gated-access-request.md) - **YOU MUST have access to this model** as it is the default and RAG App Studio won't start without it
+4. Request access to any other of the LLM models you want to use, following the instructions to [request access to Mistral 7b model](./detailed/mistral-gated-access-request.md), but visiting other HuggingFace pages. You can find out about each model on its HuggingFace page.
    1. [google/gemma-2b-it](https://huggingface.co/google/gemma-2b-it)
    2. [google/gemma-7b-it](https://huggingface.co/google/gemma-2b-it)
    3. [google/gemma-2-9b-it](https://huggingface.co/google/gemma-2-9b-it)

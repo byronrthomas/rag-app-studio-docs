@@ -11,7 +11,7 @@ In order to build a chatbot specialised with knowledge you control, you will nor
 2. Set up a model and engineer your prompts
 3. Profit
 
-Building RAG-enhanced applications often takes a fair amount of experimentation and iteration, so you may need to [start from scratch sometimes](./multi-application-support.md#how-to-start-afresh) and build a new app based on what you've tried already and what you've learnt. You can find plenty of articles on using RAG and LLMs on sites like medium.com, here are a couple of starting points if you're interested:
+Building RAG-enhanced applications often takes a fair amount of experimentation and iteration, so you may need to [start from scratch sometimes](./detailed/multi-application-support.md#how-to-start-afresh) and build a new app based on what you've tried already and what you've learnt. You can find plenty of articles on using RAG and LLMs on sites like medium.com, here are a couple of starting points if you're interested:
 * [A very detailed deep dive on a range of topics around how to build an app that uses LLMs](https://applied-llms.org/)
 * [A write up on using RAG to make a searchable knowledgebase](https://towardsdatascience.com/how-i-turned-my-companys-docs-into-a-searchable-database-with-openai-4f2d34bd8736).
 
@@ -19,7 +19,7 @@ In RAG App Studio you will use the Builder app to experiment and configure your 
 
 ## Launching the builder app
 
-The builder application is where you build your RAG application. The builder works in a single-application model, where you are only working on a single application in a single builder process, and if you happen to relaunch it you will pick up the same application again, but it does have the capability to support [developing multiple applications](./multi-application-support.md) by changing the way the builder is launched to specify which of your apps to work on.
+The builder application is where you build your RAG application. The builder works in a single-application model, where you are only working on a single application in a single builder process, and if you happen to relaunch it you will pick up the same application again, but it does have the capability to support [developing multiple applications](./detailed/multi-application-support.md) by changing the way the builder is launched to specify which of your apps to work on.
 
 In order to launch an instance of the builder, you need to create a template on Theta EdgeCloud to run a custom AI workload:
 
