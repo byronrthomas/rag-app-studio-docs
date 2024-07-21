@@ -181,3 +181,7 @@ You can see the HuggingFace hub repo that has been created privately for your us
 
 You can use the "Retrieval evaluation" page to have the LLM auto-measure how well the retrieval side of the app is performing. Currently we don't have any systematic metrics on the overall app evaluation.
 In that page you can see the queries where the app seems to retrieve the best context or not (according to the LLM's judgement of what would be the best context).
+
+## Next steps
+
+[Run your application](./running.md)
