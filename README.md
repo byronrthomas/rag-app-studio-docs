@@ -36,7 +36,12 @@ In order to use RAG App Studio, you need access to HuggingFace, you need to gene
 
 ## Building your own document-enhanced AI chatbot
 
-In order to build a chatbot specialised with knowledge that you want to query, you will normally:
+RAG stands for Retrieval-Augmented Generation. It allows you to specialise a Generative LLM like Mistral 7b with information it won't have seen in training, whether that's in-house knowledge that's not
+available on the internet, or more recent information than it's been trained on. By focusing the LLM to answer queries using documents the application has, you can also focus it's attention more to the 
+topics you want it to answer about, rather than treating every query as though some random part of its training data contains the query. This helps specialise it to your application, for example, if you
+want to be a support helper, you can feed it with documentation about the things that are being supported.
+
+In order to build a chatbot specialised with knowledge you control, you will normally:
 
 1. Configure your knowledgebase
 2. Set up a model and engineer your prompts
@@ -79,9 +84,60 @@ Then wait, within around 5 minutes the builder should be fully loaded.
 
 **TODO TODO TODO - explain how to find the UI and what to do next**
 
+### Naming your app
+
+Whilst not very important, naming your app can help you spot if you accidentally launch with a different app, and also show your users that they are interacting with what they expect. You can just enter a new name and click change to change the app name.
+You can change this at any time.
+
+![Changing the application name](./images/app_naming.png)
+
 ### Configuring your knowledgebase
 
+#### The embedding model
 
+**Before loading any documents** you should select your embedding model. **You cannot change this after uploading documents.**
+
+An embedding model is an encoding that makes your documents searchable. They vary in model size and the languages they are intended to be used on. Changing the embedding can make the retrieval side of 
+your application more effective, i.e. make the documents fed to the LLM more relevant to the query being asked.
+
+You can change the embedding before uploading documents, by simply selecting a model name and clicking "Change" - be aware that changing a model requires clearing GPU memory, downloading a model and reloading into
+the GPU which can take a minute or so. You will see the embedding name updated when it completes. 
+
+RAG App Studio supports several embedding models. If you intend to only use english text, you will probably want to use `BAAI/bge-base-en-v1.5` or `BAAI/bge-large-en-v1.5` which are reasonably sized but
+specialised to English. If you need multilingual support, the `BAAI/bge-m3` is multilingual as are the two models from `sentence-transformers`. You can look on their HuggingFace hub pages to find out more
+details about each model.
+
+[!Changing the embedding model](./images/embedding_model.png)
+
+#### Adding documents
+
+Adding documents is fairly simple, you can either select one or more files, or a single folder to get them all uploaded. Be aware that each document will take some time, so you may want to go in smaller batches
+just to see progress. Either that or dump a big batch and leave your screen on while you go get a coffee!
+
+![Selecting documents to upload](./images/uploading_files.png)
+
+Once you have uploaded files, the app will show you what you have:
+
+![Documents uploaded](./images/files_uploaded.png)
+
+RAG App Studio currently supports the following file formats automatically: 
+* .csv - comma-separated values
+* .docx - Microsoft Word
+* .epub - EPUB ebook format
+* .hwp - Hangul Word Processor
+* .ipynb - Jupyter Notebook
+* .jpeg, .jpg - JPEG image
+* .mbox - MBOX email archive
+* .md - Markdown
+* .pdf - Portable Document Format
+* .png - Portable Network Graphics
+* .ppt, .pptm, .pptx - Microsoft PowerPoint
+
+### Details of the last save
+
+Also in the header area of the builder app, near the application name, you can see the HuggingFace hub repo that has been created privately for your user account and the last save point captured by the app:
+
+![Details of the where and when the app configuration has been saved](./images/repo_details.png)
 
 
 ## RAG App Studio Runner
