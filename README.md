@@ -137,7 +137,7 @@ RAG App Studio currently supports the following file formats automatically:
 
 Also in the header area of the builder app, near the application name, you can see the HuggingFace hub repo that has been created privately for your user account and the last save point captured by the app:
 
-![Details of the where and when the app configuration has been saved](./images/repo_details.png)
+![Details of where and when the app configuration has been saved](./images/repo_details.png)
 
 
 ## RAG App Studio Runner
