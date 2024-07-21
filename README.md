@@ -34,11 +34,23 @@ In order to use RAG App Studio, you need access to HuggingFace, you need to gene
    4. [meta-llama/Llama-2-7b-chat-hf](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf)
    5. [meta-llama/Meta-Llama-3-8B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct)
 
-## RAG App Studio Builder
+## Building your own document-enhanced AI chatbot
+
+In order to build a chatbot specialised with knowledge that you want to query, you will normally:
+
+1. Configure your knowledgebase
+2. Set up a model and engineer your prompts
+3. Profit
+
+Building RAG-enhanced applications often takes a fair amount of experimentation and iteration, so you may need to [start from scratch sometimes](./multi-application-support.md#how-to-start-afresh) and build a new app based on what you've tried already and what you've learnt. You can find plenty of articles on using RAG and LLMs on sites like medium.com, here are a couple of starting points if you're interested:
+* [A very detailed deep dive on a range of topics around how to build an app that uses LLMs](https://applied-llms.org/)
+* [A write up on using RAG to make a searchable knowledgebase](https://towardsdatascience.com/how-i-turned-my-companys-docs-into-a-searchable-database-with-openai-4f2d34bd8736).
+
+In RAG App Studio you will use the Builder app to experiment and configure your application, and then when it's ready for the general public, you will use the Runner app to interact with your application (which is more specialised to just handling chats and queries).
+
+### Launching the builder app
 
 The builder application is where you build your RAG application. The builder works in a single-application model, where you are only working on a single application in a single builder process, and if you happen to relaunch it you will pick up the same application again, but it does have the capability to support [developing multiple applications](./multi-application-support.md) by changing the way the builder is launched to specify which of your apps to work on.
-
-### Launching the builder
 
 In order to launch an instance of the builder, you need to create a template on Theta EdgeCloud to run a custom AI workload:
 
@@ -66,6 +78,11 @@ Once you have the builder template, you just need to create a new model deployme
 Then wait, within around 5 minutes the builder should be fully loaded.
 
 **TODO TODO TODO - explain how to find the UI and what to do next**
+
+### Configuring your knowledgebase
+
+
+
 
 ## RAG App Studio Runner
 
@@ -101,3 +118,5 @@ Once you have the builder template, you just need to create a new model deployme
 Then wait, within around 5 minutes the builder should be fully loaded.
 
 **TODO TODO TODO - explain how to find the UI and what to do next**
+
+
