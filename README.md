@@ -133,6 +133,77 @@ RAG App Studio currently supports the following file formats automatically:
 * .png - Portable Network Graphics
 * .ppt, .pptm, .pptx - Microsoft PowerPoint
 
+### Configuring your LLM & prompts (Generation)
+
+After setting up the Retrieval-Augmented part of your app, you can set up the Generation part! You will want to select the LLM to answer queries and chat with, and also carry out prompt engineering
+to form queries & chats appropriately to get the answers you want in the style you want.
+
+#### Changing the LLM model
+
+One of the most significant changes you can make is to change the LLM model. This can affect the class of GPU machine you need to run your app on, and will also likely massively affect the results.
+
+In order to use a different LLM you need have access to it's HuggingFace hub repo - ensure you set this up as described [in the prerequisites](#pre-requisites-initial-setup).
+
+RAG App Studio has a range of LLM models available - for more details of the models see their HuggingFace hub pages. Here we order them in increasing size / increasing machine requirements:
+* google/gemma-2b-it - this is a very small model so can be run a more basic class of machine, however, in our initial tests it seems to perform significantly worse than other models at RAG (perhaps due to limited context size)
+* google/gemma-7b-it - same number of parameters as Mistral 7B
+* mistralai/Mistral-7B-Instruct-v0.1 - the default model, a good all-rounder
+* meta-llama/Llama-2-7b-chat-hf
+* meta-llama/Meta-Llama-3-8B-Instruct 
+* google/gemma-2-9b-it - This is significantly bigger than the 7B models so be careful that your machine is actually big enough!
+
+It is simple to change the model by selecting a different one and clicking "Change". Be aware that this will take several minutes as we need to clear GPU memory, download several GBs of data and load
+those GBs of parameters into the GPU again. This is the slowest operation to wait for. You will see the model name update when it is complete.
+
+![Controls to change the LLM](./images/changing_llm.png)
+
+#### Prompt engineering
+
+With the way that RAG App Studio works, there are several prompt templates that can be changed. It helps to think about what goes on in the background for a request.
+
+For a single query:
+1. The retrieval part of the app finds chunks of text from the knowledgebase that are similar in meaning to the query that has been submitted
+2. The app forms a question to submit to the LLM by incorporating the most similar chunk of knowledgebase into an overall prompt for the LLM
+3. The app then prompts the LLM again with any other chunks of knowledge returned in a form of "If you also knew x, would you change this answer you previously gave"
+
+The prompt template for step 2 is shown in the app as the "Question answering" prompt. The prompt template for step 3 is shown in the app as the "Use more context to refine" prompt. You can edit these prompts
+and submit to change how the app behaves. Be sure to [try a query](#try-a-query) after changing the prompts to see what difference it makes and whether you like the change.
+
+[Example of changing the prompts for a single query interaction](./images/query_prompts)
+
+The prompts that control a chat interaction are slightly different. When used as a chatbot, an app needs to go find relevant parts of the chat history using search against the query and then try to make
+a single prompt for the LLM. For this reason we have a "Complete next chat" prompt that incorporates context, and a "Reframe a question using history" prompt template that can be edited:
+
+NEED A SCREENSHOT FOR CHAT PROMPT TEMPLATES
+
+Be sure to [try a chat](#try-a-chat) after changing prompts to see the effect.
+
+Things you might want to change in the prompts include:
+* Instructing the LLM on how to answer - whether to include background knowledge for example
+* Helping the LLM to understand how the contextual information might relate to the query, e.g. "A model deployment on ThetaEdge cloud is a docker-like container running in the cloud"
+* Instructing the LLM on style - terseness / friendliness etc
+* Instructing the LLM on what not to say, e.g. to improve chatbot safety by avoiding causing offence
+
+Prompt engineering is a discipline it's own right, so there are a wealth of directions to go in!
+
+### Trying out your app
+
+#### Try a query
+
+You can try out a single query at any time by just entering it into the query box and hitting submit:
+
+![Entering a single query](./images/try_a_query.png)
+
+After you get the response, you can also show a panel that tells you about the retrieved context data - what the similarity score (0..1.0) was, what file the context came from and the text chunk found.
+
+![Query answer with context debugging enabled](./images/query_response_with_context.png)
+
+#### Try a chat
+
+You can also try a chat interaction at any time by using the "Try a chat" panel.
+
+
+
 ### Details of the last save
 
 In order to keep tabs on what's saved and where, you can look in the header area of the builder near the application name. 
@@ -140,6 +211,10 @@ You can see the HuggingFace hub repo that has been created privately for your us
 
 ![Details of where and when the app configuration has been saved](./images/repo_details.png)
 
+### Checking the performance of retrieval
+
+You can use the "Retrieval evaluation" page to have the LLM auto-measure how well the retrieval side of the app is performing. Currently we don't have any systematic metrics on the overall app evaluation.
+In that page you can see the queries where the app seems to retrieve the best context or not (according to the LLM's judgement of what would be the best context).
 
 ## RAG App Studio Runner
 
