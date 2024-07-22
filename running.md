@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./images/rag_app_studio_logo.png" width="1000px" alt="Logo">
+</p>
+
 # RAG App Studio Runner
 
 **IMPORTANT:** you cannot run the runner unless you have built an application using the builder - there is nothing to run.

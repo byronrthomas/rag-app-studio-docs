@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./images/rag_app_studio_logo.png" width="1000px" alt="Logo">
+</p>
+
 # Building your own document-enhanced AI chatbot
 
 RAG stands for Retrieval-Augmented Generation. It allows you to specialise a Generative LLM like Mistral 7b with information it won't have seen in training, whether that's in-house knowledge that's not

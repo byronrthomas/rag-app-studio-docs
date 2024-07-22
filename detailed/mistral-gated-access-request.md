@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="../images/rag_app_studio_logo.png" width="1000px" alt="Logo">
+</p>
+
 # Obtaining access to Mistral models on HuggingFace Hub
 
 All of the powerful open-source models have gated access on HuggingFace Hub. The authors want to capture

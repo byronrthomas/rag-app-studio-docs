@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./images/rag_app_studio_logo.png" width="1000px" alt="Logo">
+</p>
+
 # Pre-requisites / initial setup
 
 ## Theta EdgeCloud

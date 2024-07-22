@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="../images/rag_app_studio_logo.png" width="1000px" alt="Logo">
+</p>
+
 # Building multiple applications with RAG App Studio
 
 RAG App Studio is designed to simplify the workflow for users wanting the simplest experience - developing only a single app.
