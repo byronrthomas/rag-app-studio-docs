@@ -18,7 +18,7 @@ to launch into a single app without you needing to set any preferences yourself.
 You can launch the builder app in a mode that will forget the last active repo, and create a fresh repo. You
 just need to set the container environment variables like the below - replace `hf_SECRET` with your access token.
 
-`{"HUGGING_FACE_HUB_TOKEN":"hf_SECRET","CREATE_NEW_RAG_APP":"1"}`
+`{"CREATE_NEW_RAG_APP":"1","HUGGING_FACE_HUB_TOKEN":"hf_SECRET"}`
 
 You can also launch the builder app in a mode where it ignores the last active repo, and just takes whatever 
 repo / app you want. To do this, set the container environment variables like the below - replace `hf_SECRET` 

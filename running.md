@@ -16,6 +16,7 @@ In order to launch an instance of the runner, you need to create a template on T
    2. Container Image URL - must be set to `byronthomas712/rag-app-studio-runner:1.0` - **NOTE that this a different image to the builder template**
    3. Container Port - must be set to `8000`
    4. Environment variables - must be set to `{"HUGGING_FACE_HUB_TOKEN":"hf_SECRET"}` if your HuggingFace hub token is `hf_SECRET` - please be careful to enter this correctly or the app won't start
+   5. You can set a description to help you identify it, I've used `RAG App Studio Runner`
 
 Here is a screenshot showing how it would look if your token is `hf_SECRET` - **you must replace this value with your actual token!**
 
@@ -27,7 +28,8 @@ Once you have the builder template, you just need to create a new model deployme
 2. Select a big enough machine - you need at least GV2 or GA1
 3. Click create
 
-**ANOTHER SCREENSHOT ideally**
+![Launching the runner - step1](./images/runner_launch_1.png)
+![Launching the runner - step2](./images/runner_launch_2.png)
 
 Then wait, within around 5 minutes the builder should be fully loaded.
 
