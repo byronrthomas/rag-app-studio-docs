@@ -45,15 +45,22 @@ Once you have the builder template, you just need to create a new model deployme
 
 1. Click on your template name, e.g. `RAGBuild`
 2. Select a big enough machine - you need at least GV2 or GA1
-3. Click create
+3. Click "Create New Deployment"
 
 
 ![Launching the builder - step1](./images/builder_launch_1.png)
 ![Launching the builder - step2](./images/builder_launch_2.png)
 
-Then wait, within around 5 minutes the builder should be fully loaded.
+After clicking "Create New Deployment" you should see a new deployment like the below - you just need to wait until the Inference Endpoint link goes green (this will take a few minutes):
 
-**TODO TODO TODO - explain how to find the UI and what to do next**
+![Launching the builder - step3](./images/builder_launch_3.png)
+![Launching the builder - step4](./images/builder_launch_4.png)
+
+Once the "Inference Endpoint" link is green, you can click on it and you should be taken to a URL that ends in `onthetaedgecloud.com` and here you will see the Studio builder screen:
+
+![Builder launched](./images/builder_launched.png)
+
+If you don't end up here, look for the "Endpoint" link by clicking on the model deployment and just copy paste that URL into your browser.
 
 ## Naming your app
 
@@ -121,7 +128,6 @@ RAG App Studio has a range of LLM models available - for more details of the mod
 * mistralai/Mistral-7B-Instruct-v0.1 - the default model, a good all-rounder
 * meta-llama/Llama-2-7b-chat-hf
 * meta-llama/Meta-Llama-3-8B-Instruct 
-* google/gemma-2-9b-it - This is significantly bigger than the 7B models so be careful that your machine is actually big enough!
 
 It is simple to change the model by selecting a different one and clicking "Change". Be aware that this will take several minutes as we need to clear GPU memory, download several GBs of data and load
 those GBs of parameters into the GPU again. This is the slowest operation to wait for. You will see the model name update when it is complete.
