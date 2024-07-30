@@ -19,10 +19,14 @@ to launch into a single app without you needing to set any preferences yourself.
 
 ## Workflow to work on multiple apps
 
+### How to create a fresh app
+
 You can launch the builder app in a mode that will forget the last active repo, and create a fresh repo. You
 just need to set the container environment variables like the below - replace `hf_SECRET` with your access token.
 
 `{"CREATE_NEW_RAG_APP":"1","HUGGING_FACE_HUB_TOKEN":"hf_SECRET"}`
+
+### How to launch builder or runner to target a specific app (repo)
 
 You can also launch the builder app in a mode where it ignores the last active repo, and just takes whatever 
 repo / app you want. To do this, set the container environment variables like the below - replace `hf_SECRET` 
