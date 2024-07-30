@@ -85,7 +85,7 @@ RAG App Studio supports several embedding models. If you intend to only use engl
 specialised to English. If you need multilingual support, the `BAAI/bge-m3` is multilingual as are the two models from `sentence-transformers`. You can look on their HuggingFace hub pages to find out more
 details about each model.
 
-[!Changing the embedding model](./images/embedding_model.png)
+![Changing the embedding model](./images/embedding_model.png)
 
 ## Adding documents
 
