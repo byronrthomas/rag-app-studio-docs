@@ -146,7 +146,7 @@ For a single query:
 The prompt template for step 2 is shown in the app as the "Question answering" prompt. The prompt template for step 3 is shown in the app as the "Use more context to refine" prompt. You can edit these prompts
 and submit to change how the app behaves. Be sure to [try a query](#try-a-query) after changing the prompts to see what difference it makes and whether you like the change.
 
-![Example of changing the prompts for a single query interaction](./images/query_prompts)
+![Example of changing the prompts for a single query interaction](./images/query_prompts.png)
 
 The prompts that control a chat interaction are slightly different. When used as a chatbot, an app needs to go find relevant parts of the chat history using search against the query and then try to make
 a single prompt for the LLM. For this reason we have a "Complete next chat" prompt that incorporates context, and a "Reframe a question using history" prompt template that can be edited:
